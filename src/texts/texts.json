@@ -1,0 +1,90 @@
+[
+  {
+    "id": "1",
+    "en": {
+      "title": "English: Simple Words",
+      "text": "Cat and dog play in the yard. The sun is shining, and a little fish swims in the pond. Books are lying on the table."
+    },
+    "ru": {
+      "title": "Русский: Простые слова",
+      "text": "Кот и пёс играют во дворе. Солнце светит, а маленькая рыбка плавает в пруду. Книги лежат на столе."
+    }
+  },
+  {
+    "id": "2",
+    "en": {
+      "title": "English: Short Sentence",
+      "text": "The red apple is on the table. A green pear is next to it. Both fruits look fresh and tasty."
+    },
+    "ru": {
+      "title": "Русский: Короткое предложение",
+      "text": "Красное яблоко лежит на столе. Рядом с ним зелёная груша. Оба фрукта выглядят свежими и аппетитными."
+    }
+  },
+  {
+    "id": "3",
+    "en": {
+      "title": "English: Everyday Actions",
+      "text": "I wake up early every day, brush my teeth, wash my face, and drink a glass of water. Then I make breakfast and read the news."
+    },
+    "ru": {
+      "title": "Русский: Повседневные действия",
+      "text": "Я просыпаюсь рано каждый день, чищу зубы, умываюсь и пью стакан воды. Затем я готовлю завтрак и читаю новости."
+    }
+  },
+  {
+    "id": "4",
+    "en": {
+      "title": "English: Nature Walk",
+      "text": "Walking in the park, I hear birds singing, see green trees, and feel the fresh wind on my face. Sometimes I meet a squirrel or see a butterfly."
+    },
+    "ru": {
+      "title": "Русский: Прогулка на природе",
+      "text": "Гуляя в парке, я слышу пение птиц, вижу зелёные деревья и ощущаю свежий ветер на лице. Иногда встречаю белку или вижу бабочку."
+    }
+  },
+  {
+    "id": "5",
+    "en": {
+      "title": "English: Technology",
+      "text": "Modern technology helps people learn new things, communicate, and work from anywhere in the world. Computers and smartphones make our lives easier, but it is important to use them wisely."
+    },
+    "ru": {
+      "title": "Русский: Технологии",
+      "text": "Современные технологии помогают людям учиться новому, общаться и работать из любой точки мира. Компьютеры и смартфоны делают нашу жизнь проще, но важно использовать их с умом."
+    }
+  },
+  {
+    "id": "6",
+    "en": {
+      "title": "English: Motivation",
+      "text": "Never give up. Every mistake is a step toward success. Hard work and patience bring great results. Even if you fail, keep trying and you will achieve your goals."
+    },
+    "ru": {
+      "title": "Русский: Мотивация",
+      "text": "Никогда не сдавайтесь. Каждая ошибка — это шаг к успеху. Труд и терпение приносят отличные результаты. Даже если что-то не получилось, продолжайте стараться, и вы достигнете своих целей."
+    }
+  },
+  {
+    "id": "7",
+    "en": {
+      "title": "English: Daily Routine",
+      "text": "Every morning, I make coffee, read the news, and plan my day. In the evening, I like to walk and think about what I have achieved. Sometimes I write down my thoughts in a notebook to remember important moments."
+    },
+    "ru": {
+      "title": "Русский: Ежедневный распорядок",
+      "text": "Каждое утро я варю кофе, читаю новости и планирую день. Вечером люблю гулять и думать о достигнутом. Иногда я записываю свои мысли в блокнот, чтобы запомнить важные моменты."
+    }
+  },
+  {
+    "id": "8",
+    "en": {
+      "title": "English: The Power of Reading",
+      "text": "Reading books expands our vocabulary and imagination. Complex stories with unusual words help us think deeper and understand the world better. The more we read, the easier it becomes to express our thoughts clearly and confidently."
+    },
+    "ru": {
+      "title": "Русский: Сила чтения",
+      "text": "Чтение книг расширяет наш словарный запас и воображение. Сложные истории с необычными словами помогают глубже мыслить и лучше понимать мир. Чем больше мы читаем, тем легче выражать свои мысли ясно и уверенно."
+    }
+  }
+] 
