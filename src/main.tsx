@@ -9,6 +9,8 @@ import Home from "./pages/Home";
 import Training from "./pages/Training";
 import Results from "./pages/Results";
 import TextSelect from "./pages/TextSelect";
+import Stats from "./pages/Stats";
+import LoginPage from "./pages/Login";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +21,8 @@ const router = createBrowserRouter([
       { path: "training", element: <Training /> },
       { path: "results", element: <Results /> },
       { path: "select", element: <TextSelect /> },
+      { path: "statistics", element: <Stats /> },
+      { path: "login", element: <LoginPage /> },
     ],
   },
 ]);

@@ -27,18 +27,16 @@ const Header = () => {
           >
             {home}
           </Link>
-          <p className="text-[var(--color-text-secondary)]">{stats}</p>
+          <Link
+            to="/statistics"
+            className="text-[var(--color-text)] dark:text-[var(--color-text)] hover:text-[var(--color-accent)] px-2 py-1 rounded transition-colors duration-200"
+          >
+            {stats}
+          </Link>
+
         </div>
         <div className="flex flex-row gap-2 text-base items-center min-w-0">
           <div className="flex gap-0.5 items-center bg-[var(--color-bg)] rounded px-1 py-0.5 border border-[var(--color-border)] min-w-0">
-            <button
-              className={`px-1.5 py-0.5 rounded font-bold text-sm transition-colors duration-150 ${language === "ru" ? "bg-[var(--color-accent)] text-white" : "text-[var(--color-text-secondary)] hover:bg-[var(--color-block)]"}`}
-              onClick={() => setLanguage("ru")}
-              aria-pressed={language === "ru"}
-              style={{ minWidth: 32 }}
-            >
-              RU
-            </button>
             <button
               className={`px-1.5 py-0.5 rounded font-bold text-sm transition-colors duration-150 ${language === "en" ? "bg-[var(--color-accent)] text-white" : "text-[var(--color-text-secondary)] hover:bg-[var(--color-block)]"}`}
               onClick={() => setLanguage("en")}
@@ -47,11 +45,25 @@ const Header = () => {
             >
               EN
             </button>
+            <button
+              className={`px-1.5 py-0.5 rounded font-bold text-sm transition-colors duration-150 ${language === "ru" ? "bg-[var(--color-accent)] text-white" : "text-[var(--color-text-secondary)] hover:bg-[var(--color-block)]"}`}
+              onClick={() => setLanguage("ru")}
+              aria-pressed={language === "ru"}
+              style={{ minWidth: 32 }}
+            >
+              RU
+            </button>
+
           </div>
           <div className="scale-90">
             <ThemeSwitch />
           </div>
-          <p className="text-[var(--color-text-secondary)]">{login}</p>
+          <Link
+            to="/login"
+            className="text-[var(--color-text)] dark:text-[var(--color-text)] hover:text-[var(--color-accent)] px-2 py-1 rounded transition-colors duration-200"
+          >
+            {login}
+          </Link>
         </div>
       </div>
     </div>

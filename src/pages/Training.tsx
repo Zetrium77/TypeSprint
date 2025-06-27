@@ -20,7 +20,7 @@ const Training = () => {
   const [text, setText] = useState<string>("");
   const [error, setError] = useState<string>("");
 
-  // Сброс и подгрузка twin-текста при смене языка или id
+  // Reset and load twin-text when language or id changes
   useEffect(() => {
     const twin = texts.find((t) => t.id === textId);
     if (!twin || !twin[language]) {
@@ -35,6 +35,25 @@ const Training = () => {
   }, [language, textId]);
 
   const handleCurrentKeyChange = (key: string) => setCurrentKey(key);
+
+  // function for saving statistics
+  const handleFinish = (result: { wpm: number; accuracy: number }) => {
+    if (!textId) return;
+    // Save to localStorage
+    const statsRaw = localStorage.getItem("typing_stats");
+    let stats: any[] = [];
+    try { if (statsRaw) stats = JSON.parse(statsRaw); } catch {}
+    stats.push({
+      id: textId,
+      language,
+      wpm: result.wpm,
+      accuracy: result.accuracy,
+      date: new Date().toISOString(),
+    });
+    localStorage.setItem("typing_stats", JSON.stringify(stats));
+    // Go to the results (or statistics) page
+    navigate("/statistics");
+  };
 
   if (error) {
     return (
@@ -60,6 +79,7 @@ const Training = () => {
           <TypingArea
             text={text}
             onCurrentKeyChange={handleCurrentKeyChange}
+            onFinish={handleFinish}
           />
         </div>
       </div>

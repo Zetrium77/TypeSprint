@@ -36,7 +36,7 @@ const rightKeys = {
 
 // Check if Shift highlight is needed for the current letter
 function needsShift(key: string) {
-  // Latin: A-Z, Russian: А-Я, Ё
+  // Latin: A-Z, Cyrillic: А-Я, Ё
   return /^[A-ZА-ЯЁ]$/.test(key);
 }
 

@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import calculateWPM from "../utils/calculateWPM";
+import { calculateAccuracy } from "../utils/calculateAccuracy";
 
 // Props for TypingArea
 interface TypingAreaProps {
   text: string;
   onCurrentKeyChange: (key: string) => void;
+  onFinish?: (result: { wpm: number; accuracy: number }) => void;
 }
 
 // Symbols for Enter visualization
@@ -50,9 +52,8 @@ function splitTextToLinesVisual(text: string, maxVisualLen: number): string[] {
   return lines;
 }
 
-const TypingArea = ({ text, onCurrentKeyChange }: TypingAreaProps) => {
+const TypingArea = ({ text, onCurrentKeyChange, onFinish }: TypingAreaProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const navigate = useNavigate();
   // lines — array of lines to display
   const [lines, setLines] = useState(() => splitTextToLinesVisual(text, 60));
   // Index of the current line
@@ -61,6 +62,7 @@ const TypingArea = ({ text, onCurrentKeyChange }: TypingAreaProps) => {
   const [userInput, setUserInput] = useState<string[]>([]);
   // User input for all lines (for highlighting previous lines)
   const [lineInputs, setLineInputs] = useState<string[][]>([]);
+  const [startTime, setStartTime] = useState<number | null>(null);
 
   /**
    * Recalculates line length by container width and resets progress.
@@ -102,6 +104,23 @@ const TypingArea = ({ text, onCurrentKeyChange }: TypingAreaProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userInput, currentLine, currentText]);
 
+  // Save the time of the first input
+  useEffect(() => {
+    if (userInput.length > 0 && !startTime) {
+      setStartTime(Date.now());
+    }
+  }, [userInput, startTime]);
+
+  // Recalculate WPM on each input
+  useEffect(() => {
+    if (startTime && userInput.length > 0) {
+      const now = Date.now();
+      const wpmValue = calculateWPM(userInput.length, startTime, now);
+      // For testing, output to the console
+      console.log("WPM:", wpmValue);
+    }
+  }, [userInput, startTime, currentLine]);
+
   // Keydown handler
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     // If Enter is pressed
@@ -121,7 +140,15 @@ const TypingArea = ({ text, onCurrentKeyChange }: TypingAreaProps) => {
         // Go to next line or return to text selection
         setTimeout(() => {
           if (currentLine + 1 >= lines.length) {
-            navigate('/select');
+            // Finish typing
+            if (startTime) {
+              const now = Date.now();
+              const wpmValue = calculateWPM(userInput.length, startTime, now);
+              const accuracy = calculateAccuracy(lineInputs, lines, ENTER_CHAR);
+              if (typeof onFinish === "function") {
+                onFinish({ wpm: wpmValue, accuracy });
+              }
+            }
           } else {
             setCurrentLine((i) => i + 1);
             setUserInput(lineInputs[currentLine + 1] || []);
@@ -193,7 +220,15 @@ const TypingArea = ({ text, onCurrentKeyChange }: TypingAreaProps) => {
         });
         setTimeout(() => {
           if (currentLine + 1 >= lines.length) {
-            navigate('/select');
+            // Finish typing
+            if (startTime) {
+              const now = Date.now();
+              const wpmValue = calculateWPM(userInput.length, startTime, now);
+              const accuracy = calculateAccuracy(lineInputs, lines, ENTER_CHAR);
+              if (typeof onFinish === "function") {
+                onFinish({ wpm: wpmValue, accuracy });
+              }
+            }
           } else {
             setCurrentLine((i) => i + 1);
             setUserInput(lineInputs[currentLine + 1] || []);

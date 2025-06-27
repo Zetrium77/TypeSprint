@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 
-export type Language = "ru" | "en";
+export type Language = "en" | "ru";
 
 interface LanguageContextType {
   language: Language;
@@ -13,7 +13,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguageState] = useState<Language>(() => {
     if (typeof window !== "undefined") {
       const stored = localStorage.getItem("language");
-      if (stored === "ru" || stored === "en") return stored;
+      if (stored === "en" || stored === "ru") return stored;
     }
     return "en";
   });
