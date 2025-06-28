@@ -41,6 +41,7 @@ const Header = () => {
               className={`px-1.5 py-0.5 rounded font-bold text-sm transition-colors duration-150 ${language === "en" ? "bg-[var(--color-accent)] text-white" : "text-[var(--color-text-secondary)] hover:bg-[var(--color-block)]"}`}
               onClick={() => setLanguage("en")}
               aria-pressed={language === "en"}
+              aria-label="Switch to English"
               style={{ minWidth: 32 }}
             >
               EN
@@ -49,6 +50,7 @@ const Header = () => {
               className={`px-1.5 py-0.5 rounded font-bold text-sm transition-colors duration-150 ${language === "pl" ? "bg-[var(--color-accent)] text-white" : "text-[var(--color-text-secondary)] hover:bg-[var(--color-block)]"}`}
               onClick={() => setLanguage("pl")}
               aria-pressed={language === "pl"}
+              aria-label="Switch to Polish"
               style={{ minWidth: 32 }}
             >
               PL
@@ -57,6 +59,7 @@ const Header = () => {
               className={`px-1.5 py-0.5 rounded font-bold text-sm transition-colors duration-150 ${language === "ru" ? "bg-[var(--color-accent)] text-white" : "text-[var(--color-text-secondary)] hover:bg-[var(--color-block)]"}`}
               onClick={() => setLanguage("ru")}
               aria-pressed={language === "ru"}
+              aria-label="Switch to Russian"
               style={{ minWidth: 32 }}
             >
               RU

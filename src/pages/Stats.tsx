@@ -24,8 +24,16 @@ const Stats = () => {
     const raw = localStorage.getItem("typing_stats");
     if (raw) {
       try {
-        setStats(JSON.parse(raw));
-      } catch {
+        const parsed = JSON.parse(raw);
+        // Validate that it's an array
+        if (Array.isArray(parsed)) {
+          setStats(parsed);
+        } else {
+          console.warn("Invalid stats format in localStorage");
+          setStats([]);
+        }
+      } catch (error) {
+        console.error("Error parsing stats from localStorage:", error);
         setStats([]);
       }
     }

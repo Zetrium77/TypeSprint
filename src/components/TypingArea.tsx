@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import calculateWPM from "../utils/calculateWPM";
 import { calculateAccuracy } from "../utils/calculateAccuracy";
 
@@ -272,7 +272,7 @@ const TypingArea = ({ text, onCurrentKeyChange, onFinish }: TypingAreaProps) => 
   }, [currentLine, userInput, lineInputs, lines]);
 
   // Helper for rendering a line with highlighting and cursor
-  const renderLine = (text: string, input: string[] = [], isActive = false) => {
+  const renderLine = useCallback((text: string, input: string[] = [], isActive = false) => {
     const chars = text.split("");
     const fullChars = [...chars, ENTER_CHAR];
     return (
@@ -317,7 +317,7 @@ const TypingArea = ({ text, onCurrentKeyChange, onFinish }: TypingAreaProps) => 
         })}
       </div>
     );
-  };
+  }, []);
 
   return (
     <div

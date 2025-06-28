@@ -46,7 +46,13 @@ const Training = () => {
     if (!textId) return;
     // Save to localStorage
     const statsRaw = localStorage.getItem("typing_stats");
-    let stats: any[] = [];
+    let stats: Array<{
+      id: string;
+      language: "en" | "ru" | "pl";
+      wpm: number;
+      accuracy: number;
+      date: string;
+    }> = [];
     try { if (statsRaw) stats = JSON.parse(statsRaw); } catch {}
     stats.push({
       id: textId,
