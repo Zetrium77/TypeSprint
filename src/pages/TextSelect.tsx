@@ -6,7 +6,11 @@ import { useLanguage } from "../theme/LanguageProvider";
 const TextSelect = () => {
   const navigate = useNavigate();
   const { language } = useLanguage();
-  const title = language === "en" ? "Select a text for training" : "Выберите текст для тренировки";
+  const title = language === "en" 
+    ? "Select a text for training" 
+    : language === "ru" 
+    ? "Выберите текст для тренировки"
+    : "Wybierz tekst do treningu";
 
   const handleSelect = (id: string) => {
     navigate(`/training?textId=${id}`);

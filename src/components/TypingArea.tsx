@@ -123,10 +123,19 @@ const TypingArea = ({ text, onCurrentKeyChange, onFinish }: TypingAreaProps) => 
 
   // Keydown handler
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    // Helper function to play sound
+    const playSound = (isError: boolean = false) => {
+      try { 
+        const audio = new Audio(isError ? '/sounds/error.mp3' : '/sounds/tap.mp3'); 
+        audio.volume = 0.3; 
+        audio.play(); 
+      } catch { }
+    };
+
     // If Enter is pressed
     if (e.key === ENTER_KEY) {
       // Play sound
-      try { const audio = new Audio('/sounds/tap.mp3'); audio.volume = 0.3; audio.play(); } catch { }
+      playSound();
       if (userInput.length === currentText.length) {
         // Enter at the right position
         const newInput = [...userInput, ENTER_CHAR];
@@ -173,7 +182,7 @@ const TypingArea = ({ text, onCurrentKeyChange, onFinish }: TypingAreaProps) => 
     // If Backspace
     if (e.key === "Backspace") {
       // Play sound
-      try { const audio = new Audio('/sounds/tap.mp3'); audio.volume = 0.3; audio.play(); } catch { }
+      playSound();
       if (userInput.length > 0) {
         setUserInput(userInput.slice(0, -1));
       } else if (currentLine > 0) {
@@ -206,12 +215,19 @@ const TypingArea = ({ text, onCurrentKeyChange, onFinish }: TypingAreaProps) => 
     }
     // Regular character
     if (e.key.length === 1) {
-      // Play sound
-      try { const audio = new Audio('/sounds/tap.mp3'); audio.volume = 0.3; audio.play(); } catch { }
       if (userInput.length < currentText.length) {
+        // Check if the character is correct
+        const expectedChar = currentText[userInput.length];
+        const isCorrect = e.key === expectedChar;
+        
+        // Play appropriate sound
+        playSound(!isCorrect);
+        
         setUserInput([...userInput, e.key]);
       } else if (userInput.length === currentText.length) {
         // If cursor is at Enter, but not Enter pressed — mark as error
+        playSound(true); // This is an error since we're at the end of the line
+        
         setUserInput([...userInput, e.key]);
         setLineInputs((prev) => {
           const updated = [...prev];

@@ -8,6 +8,10 @@
     "ru": {
       "title": "Русский: Простые слова",
       "text": "Кот и пёс играют во дворе. Солнце светит, а маленькая рыбка плавает в пруду. Книги лежат на столе."
+    },
+    "pl": {
+      "title": "Polski: Proste słowa",
+      "text": "Kot i pies bawią się na podwórku. Słońce świeci, a mała rybka pływa w stawie. Książki leżą na stole."
     }
   },
   {
@@ -19,6 +23,10 @@
     "ru": {
       "title": "Русский: Короткое предложение",
       "text": "Красное яблоко лежит на столе. Рядом с ним зелёная груша. Оба фрукта выглядят свежими и аппетитными."
+    },
+    "pl": {
+      "title": "Polski: Krótkie zdanie",
+      "text": "Czerwone jabłko leży na stole. Obok niego zielona gruszka. Oba owoce wyglądają świeżo i smacznie."
     }
   },
   {
@@ -30,6 +38,10 @@
     "ru": {
       "title": "Русский: Повседневные действия",
       "text": "Я просыпаюсь рано каждый день, чищу зубы, умываюсь и пью стакан воды. Затем я готовлю завтрак и читаю новости."
+    },
+    "pl": {
+      "title": "Polski: Codzienne czynności",
+      "text": "Budzę się wcześnie każdego dnia, myję zęby, myję twarz i piję szklankę wody. Następnie przygotowuję śniadanie i czytam wiadomości."
     }
   },
   {
@@ -41,6 +53,10 @@
     "ru": {
       "title": "Русский: Прогулка на природе",
       "text": "Гуляя в парке, я слышу пение птиц, вижу зелёные деревья и ощущаю свежий ветер на лице. Иногда встречаю белку или вижу бабочку."
+    },
+    "pl": {
+      "title": "Polski: Spacer na łonie natury",
+      "text": "Spacerując po parku, słyszę śpiew ptaków, widzę zielone drzewa i czuję świeży wiatr na twarzy. Czasami spotykam wiewiórkę lub widzę motyla."
     }
   },
   {
@@ -52,6 +68,10 @@
     "ru": {
       "title": "Русский: Технологии",
       "text": "Современные технологии помогают людям учиться новому, общаться и работать из любой точки мира. Компьютеры и смартфоны делают нашу жизнь проще, но важно использовать их с умом."
+    },
+    "pl": {
+      "title": "Polski: Technologia",
+      "text": "Nowoczesna technologia pomaga ludziom uczyć się nowych rzeczy, komunikować się i pracować z dowolnego miejsca na świecie. Komputery i smartfony ułatwiają nam życie, ale ważne jest, aby używać ich mądrze."
     }
   },
   {
@@ -63,6 +83,10 @@
     "ru": {
       "title": "Русский: Мотивация",
       "text": "Никогда не сдавайтесь. Каждая ошибка — это шаг к успеху. Труд и терпение приносят отличные результаты. Даже если что-то не получилось, продолжайте стараться, и вы достигнете своих целей."
+    },
+    "pl": {
+      "title": "Polski: Motywacja",
+      "text": "Nigdy się nie poddawaj. Każdy błąd to krok w kierunku sukcesu. Ciężka praca i cierpliwość przynoszą wspaniałe rezultaty. Nawet jeśli się nie uda, kontynuuj próby, a osiągniesz swoje cele."
     }
   },
   {
@@ -74,6 +98,10 @@
     "ru": {
       "title": "Русский: Ежедневный распорядок",
       "text": "Каждое утро я варю кофе, читаю новости и планирую день. Вечером люблю гулять и думать о достигнутом. Иногда я записываю свои мысли в блокнот, чтобы запомнить важные моменты."
+    },
+    "pl": {
+      "title": "Polski: Codzienna rutyna",
+      "text": "Każdego ranka parzę kawę, czytam wiadomości i planuję swój dzień. Wieczorem lubię spacerować i myśleć o tym, co osiągnąłem. Czasami zapisuję swoje myśli w notatniku, aby zapamiętać ważne chwile."
     }
   },
   {
@@ -85,6 +113,10 @@
     "ru": {
       "title": "Русский: Сила чтения",
       "text": "Чтение книг расширяет наш словарный запас и воображение. Сложные истории с необычными словами помогают глубже мыслить и лучше понимать мир. Чем больше мы читаем, тем легче выражать свои мысли ясно и уверенно."
+    },
+    "pl": {
+      "title": "Polski: Siła czytania",
+      "text": "Czytanie książek poszerza nasze słownictwo i wyobraźnię. Skomplikowane historie z niezwykłymi słowami pomagają nam myśleć głębiej i lepiej rozumieć świat. Im więcej czytamy, tym łatwiej wyrażać nasze myśli jasno i pewnie."
     }
   }
 ] 

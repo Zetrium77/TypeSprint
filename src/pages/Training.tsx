@@ -16,7 +16,7 @@ const Training = () => {
   const { language } = useLanguage();
   const textId = query.get("textId");
   const [currentKey, setCurrentKey] = useState<string>("");
-  const [layout, setLayout] = useState<"en" | "ru">("en");
+  const [layout, setLayout] = useState<"en" | "ru" | "pl">("en");
   const [text, setText] = useState<string>("");
   const [error, setError] = useState<string>("");
 
@@ -24,7 +24,12 @@ const Training = () => {
   useEffect(() => {
     const twin = texts.find((t) => t.id === textId);
     if (!twin || !twin[language]) {
-      setError(language === "en" ? "Text not found. Please select a text." : "Текст не найден. Пожалуйста, выберите текст.");
+      const errorMessage = language === "en" 
+        ? "Text not found. Please select a text." 
+        : language === "ru"
+        ? "Текст не найден. Пожалуйста, выберите текст."
+        : "Tekst nie został znaleziony. Proszę wybierz tekst.";
+      setError(errorMessage);
       setText("");
       return;
     }
@@ -56,6 +61,12 @@ const Training = () => {
   };
 
   if (error) {
+    const backButtonText = language === "en" 
+      ? "Back to Text Selection" 
+      : language === "ru"
+      ? "Назад к выбору текста"
+      : "Powrót do wyboru tekstu";
+    
     return (
       <div className="flex flex-col items-center justify-center min-h-[95vh] bg-[var(--color-bg)]">
         <div className="bg-[var(--color-block)] border border-[var(--color-border)] rounded-xl shadow-lg p-8 text-center">
@@ -64,7 +75,7 @@ const Training = () => {
             className="bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] text-white font-semibold py-2 px-6 rounded-lg shadow transition-colors duration-200"
             onClick={() => navigate("/select")}
           >
-            {language === "en" ? "Back to Text Selection" : "Назад к выбору текста"}
+            {backButtonText}
           </button>
         </div>
       </div>

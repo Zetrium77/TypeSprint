@@ -4,9 +4,9 @@ import { useLanguage } from "../theme/LanguageProvider";
 
 const Header = () => {
   const { language, setLanguage } = useLanguage();
-  const home = language === "en" ? "Home" : "Главная";
-  const stats = language === "en" ? "Stats" : "Статистика";
-  const login = language === "en" ? "Login" : "Войти";
+  const home = language === "en" ? "Home" : language === "ru" ? "Главная" : "Strona główna";
+  const stats = language === "en" ? "Stats" : language === "ru" ? "Статистика" : "Statystyki";
+  const login = language === "en" ? "Login" : language === "ru" ? "Войти" : "Zaloguj";
 
   return (
     <div className="bg-[var(--color-block)] text-[var(--color-text)] border-b border-[var(--color-border)] flex flex-row justify-center h-[5vh] items-center shadow-md px-6">
@@ -46,6 +46,14 @@ const Header = () => {
               EN
             </button>
             <button
+              className={`px-1.5 py-0.5 rounded font-bold text-sm transition-colors duration-150 ${language === "pl" ? "bg-[var(--color-accent)] text-white" : "text-[var(--color-text-secondary)] hover:bg-[var(--color-block)]"}`}
+              onClick={() => setLanguage("pl")}
+              aria-pressed={language === "pl"}
+              style={{ minWidth: 32 }}
+            >
+              PL
+            </button>
+            <button
               className={`px-1.5 py-0.5 rounded font-bold text-sm transition-colors duration-150 ${language === "ru" ? "bg-[var(--color-accent)] text-white" : "text-[var(--color-text-secondary)] hover:bg-[var(--color-block)]"}`}
               onClick={() => setLanguage("ru")}
               aria-pressed={language === "ru"}
@@ -53,6 +61,7 @@ const Header = () => {
             >
               RU
             </button>
+
 
           </div>
           <div className="scale-80">

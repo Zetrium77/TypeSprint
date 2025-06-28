@@ -38,6 +38,20 @@ const LoginPage = () => {
             loginError: "Ошибка входа. Попробуйте ещё раз.",
             logoutError: "Ошибка выхода. Попробуйте ещё раз.",
             firebaseNotConfiguredError: "Firebase не настроен. Проверьте файл .env."
+        },
+        pl: {
+            signInTitle: "Zaloguj się do swojego konta",
+            signInSubtitle: "Śledź swój postęp w pisaniu na wszystkich urządzeniach",
+            signInWithGoogle: "Zaloguj się przez Google",
+            signOut: "Wyloguj się",
+            welcome: "Witaj,",
+            firebaseNotConfigured: "Firebase nie jest skonfigurowany",
+            firebaseNotConfiguredDesc: "Uwierzytelnianie jest obecnie niedostępne, ponieważ brakuje konfiguracji Firebase.",
+            envFileInstruction: "Proszę utwórz plik .env w głównym katalogu projektu z konfiguracją Firebase:",
+            localStatsNote: "Nadal możesz korzystać z trenera — statystyki będą zapisywane tylko lokalnie.",
+            loginError: "Logowanie nie powiodło się. Spróbuj ponownie.",
+            logoutError: "Wylogowanie nie powiodło się. Spróbuj ponownie.",
+            firebaseNotConfiguredError: "Firebase nie jest skonfigurowany. Sprawdź plik .env."
         }
     };
 
@@ -90,7 +104,7 @@ const LoginPage = () => {
 
     if (!isFirebaseAvailable) {
         return (
-            <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
+            <div className="min-h-screen flex items-center justify-center bg-[var(--color-bg)]">
                 <div className="max-w-md w-full space-y-8 p-8">
                     <div className="text-center">
                         <div className="mx-auto h-12 w-12 text-red-500">
@@ -98,22 +112,25 @@ const LoginPage = () => {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
                             </svg>
                         </div>
-                        <h2 className="mt-6 text-3xl font-extrabold text-gray-900 dark:text-white">
+                        <h2 className="mt-6 text-3xl font-extrabold text-[var(--color-text)]">
                             {t.firebaseNotConfigured}
                         </h2>
-                        <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                        <p className="mt-2 text-sm text-[var(--color-text-secondary)]">
                             {t.firebaseNotConfiguredDesc}<br />
                             {t.envFileInstruction}
                         </p>
                         <pre className="mt-2 text-xs bg-red-100 dark:bg-red-800 p-2 rounded overflow-x-auto text-left">
-                            {`VITE_FIREBASE_API_KEY=your_api_key
-VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
-VITE_FIREBASE_PROJECT_ID=your_project_id
-VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
-VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-VITE_FIREBASE_APP_ID=your_app_id`}
+                            {`
+                            VITE_FIREBASE_API_KEY=your_api_key
+                            VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+                            VITE_FIREBASE_PROJECT_ID=your_project_id
+                            VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+                            VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+                            VITE_FIREBASE_APP_ID=your_app_id
+                            VITE_FIREBASE_MEASUREMENT_ID=your_measurement_id
+                            `}
                         </pre>
-                        <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
+                        <p className="mt-4 text-sm text-[var(--color-text-secondary)]">
                             {t.localStatsNote}
                         </p>
                     </div>
@@ -123,13 +140,13 @@ VITE_FIREBASE_APP_ID=your_app_id`}
     }
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
+        <div className="min-h-screen flex items-center justify-center bg-[var(--color-bg)]">
             <div className="max-w-md w-full space-y-8 p-8">
                 <div className="text-center">
-                    <h2 className="mt-6 text-3xl font-extrabold text-gray-900 dark:text-white">
+                    <h2 className="mt-6 text-3xl font-extrabold text-[var(--color-text)]">
                         {t.signInTitle}
                     </h2>
-                    <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                    <p className="mt-2 text-sm text-[var(--color-text-secondary)]">
                         {t.signInSubtitle}
                     </p>
                 </div>
@@ -145,10 +162,10 @@ VITE_FIREBASE_APP_ID=your_app_id`}
                                     />
                                 )}
                                 <div>
-                                    <p className="text-lg font-medium text-gray-900 dark:text-white">
+                                    <p className="text-lg font-medium text-[var(--color-text)]">
                                         {t.welcome} {user.displayName || user.email}
                                     </p>
-                                    <p className="text-sm text-gray-500 dark:text-gray-400">
+                                    <p className="text-sm text-[var(--color-text-secondary)]">
                                         {user.email}
                                     </p>
                                 </div>
