@@ -55,7 +55,7 @@ const Header = () => {
             </button>
 
           </div>
-          <div className="scale-90">
+          <div className="scale-80">
             <ThemeSwitch />
           </div>
           <Link
